@@ -103,9 +103,11 @@ class Board:
         return real_field
 
     def add_ship_auto(self):
+        self.ships = coords
+        self.busy_dots = self.ships
         for i in range(len(coords)):
-            self.field[coords[i][0]][coords[i][1]] = '■'
-            self.busy_dots = coords
+            self.field[self.ships[i][0]][self.ships[i][1]] = '■'
+
 
 player1=Player('Вася',True)
 player2=Player('LG',False)
@@ -121,13 +123,16 @@ ship5 = Ship(2,False)
 ship6 = Ship(2,False)
 ship7 = Ship(3,True)
 board1.add_ship_auto()
+coords=[]
+ship8 = Ship(1,True)
+ship9 = Ship(1,True)
+ship10 = Ship(1,True)
+ship11 = Ship(1,True)
+ship12 = Ship(2,False)
+ship13 = Ship(2,False)
+ship14 = Ship(3,True)
 board2.add_ship_auto()
-# board2.add_ship_auto(ship2)
-# board2.add_ship_auto(ship3)
-# board2.add_ship_auto(ship4)
-# board2.add_ship_auto(ship5)
-# board2.add_ship_auto(ship6)
-# board2.add_ship_auto(ship7)
+
 print('busy dots 1st player: ',board1.busy_dots)
 print('busy dots 2nd player: ',board2.busy_dots)
 print('coords: ',coords)
